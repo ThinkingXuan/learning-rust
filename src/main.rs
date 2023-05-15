@@ -49,4 +49,3 @@ fn main() {
     println!("the s is {}", s2)
 
 }
-
