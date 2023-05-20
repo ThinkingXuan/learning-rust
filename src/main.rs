@@ -1,4 +1,7 @@
+use std::collections::HashMap;
+
 const MAX_POINTS: u32 = 100_000;
+
 
 fn main() {
     let mut x = 5;
@@ -46,6 +49,34 @@ fn main() {
     let s2 = String::from("hello word!");
     let s3 = s2;
 
-    println!("the s is {}", s2)
+    // println!("the s is {}", s2)
 
+    let mut map = HashMap::new();
+    
+    map.insert(123, false);
+    map.insert(456, true);
+
+    if let Some(T) = map.get(&123) {
+
+    }
+    println!("{}", map.get(&123).unwrap());
+    
+
+}
+
+use std::collections::HashSet;
+pub fn contains_duplicate(nums: Vec<i32>) -> bool {
+
+    let mut set: HashSet<i32> = nums.to_owned().into_iter().collect();
+    return set.len() != nums.len();
+}
+
+pub fn contains_duplicate2(nums: Vec<i32>) -> bool {
+    let mut set = HashSet::new();
+    for v in nums {
+        if !set.insert(v) {
+            return true;
+        }
+    }
+    false
 }

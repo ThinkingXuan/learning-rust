@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use std::io::{ErrorKind, self, Read};
 use std::fs::File;
 
@@ -43,7 +44,6 @@ fn main() {
 }
 
 fn test1() {
-
 }
 
 fn read_username_from_file() -> Result<String, io::Error> {
@@ -79,4 +79,13 @@ fn read_username_from_file3() -> Result<String, io::Error> {
 fn last_char_of_first_line(text: &str) -> Option<char> {
     text.lines().next()?.chars().last()
 
+}
+pub struct Solution{}
+impl Solution {
+    pub fn rotate(nums: &mut Vec<i32>, k: i32) {
+        for _ in 0.. k as usize % nums.len() {
+            let n = nums.pop().unwrap();
+            nums.insert(0, n);
+        }
+    }
 }
