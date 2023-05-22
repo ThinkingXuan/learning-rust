@@ -26,3 +26,37 @@ fn main() {
     }
     println!("{:?}", map);
 }
+
+fn main() {
+    let arr = [1, 2, 3, 2, 4, 1, 3, 5];
+    let mut counts = HashMap::new();
+
+    for &num in &arr {
+        *counts.entry(num).or_insert(0) += 1;
+    }
+
+    for (num, count) in counts {
+        println!("{} occurs {} times", num, count);
+    }
+}
+
+pub fn single_number(nums: Vec<i32>) -> i32 {
+    let mut mp: HashMap<i32, i32> = HashMap::new();
+
+    for i in 0..nums.len() {
+        if let Some(&count) = mp.get(&nums[i]) {
+            mp.insert(nums[i], count+1);
+        }else {
+             mp.insert(nums[i], 1);
+        }
+    }
+
+    for (k, v) in mp {
+        if v == 1 {
+            return k;
+        }
+    }
+
+    
+    return -1;
+}

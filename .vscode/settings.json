@@ -3,5 +3,8 @@
         "./match_test/Cargo.toml",
         "Cargo.toml",
         "./error_test/Cargo.toml",
+        "./generic_test/Cargo.toml",
+        ".\\hashmap_test\\Cargo.toml",
+        ".\\trait_test\\Cargo.toml",
     ]
 }
