@@ -59,6 +59,16 @@ fn main() {
     if let Some(T) = map.get(&123) {
 
     }
+
+    for &k in map.keys() {
+
+    }
+    let mut res = Vec::new();
+    for &k in map.keys() {
+        if map.contains_key(&k) {
+            res.push(k);
+        }
+    }
     println!("{}", map.get(&123).unwrap());
     
 
@@ -79,4 +89,24 @@ pub fn contains_duplicate2(nums: Vec<i32>) -> bool {
         }
     }
     false
+}
+
+
+pub fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
+    let mut res: Vec<i32> = Vec::new();
+    let mut mp = std::collections::HashMap::new();
+    for &v in &nums1 {
+        *mp.entry(v).or_insert(0)+=1
+    }
+
+    for &v in &nums2 {
+        if let Some(cnt) = mp.get_mut(&v) {
+            if *cnt == 0 {
+                continue;
+            }
+            res.push(v);
+            *cnt -=1;
+        }
+    }
+    return res;
 }
