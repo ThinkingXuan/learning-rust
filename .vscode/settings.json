@@ -6,6 +6,7 @@
         "./generic_test/Cargo.toml",
         ".\\hashmap_test\\Cargo.toml",
         ".\\trait_test\\Cargo.toml",
-        ".\\lifetime_test\\Cargo.toml"
+        ".\\lifetime_test\\Cargo.toml",
+        ".\\test_test\\Cargo.toml"
     ]
 }
